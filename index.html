@@ -1,0 +1,391 @@
+<!doctype html>
+<html xmlns:gs="http://www.gensee.com/ec">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+<title>直播室</title>
+<meta name="renderer" content="webkit">
+<meta name="keywords" content="新华油,新华油直播室" />
+<meta name="description" content="新华油直播室竭诚为广大原油投资者服务,提供全面的新华油投资指导,新华油行情分析,新华油实时讲盘。
+" />
+<meta http-equiv="X-UA-Compatible" content="IE=9; IE=8; IE=7; IE=EDGE" />
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/jquery.mCustomScrollbar.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.mCustomScrollbar.js"></script>
+<script type="text/javascript" src="js/layer/layer.js"></script>
+<script type="text/javascript" src="js/room.base.js"></script>
+<script defer type="text/javascript" src="js/room.init.js"></script>
+<script defer type="text/javascript" src="js/room.chat.js"></script>
+
+<script type="text/javascript" id='gsjs' src="http://static.gensee.com/webcast/static/sdk/js/gssdk.js"></script>
+</head>
+<body>
+<div id="background" class="background">
+	<img src="images/background.jpg">
+</div>
+<div class="header">
+	<h1 class="logo">108直播室</h1>
+	<div class="nav">
+		<a class="navlink save" href="/Room/Index/windowShortCut/roomid/8/title/%25E6%2596%25B0%25E5%258D%258E%25E6%25B2%25B9%25E7%259B%25B4%25E6%2592%25AD%25E5%25AE%25A4">保存到桌面</a>
+		<a class="navlink" href="javascript:void(0);" onclick="layertest();">操作建议</a>
+		<a class="navlink" href="http://kxt.com/data/2.html?xhy"  target="_blank">EIA原油库存</a>
+		<a class="navlink" href="http://kxt.com/rili?xhy"  target="_blank">财经日历</a>
+		<a class="navlink" href="http://kxt.com/data/1.html?xhy"  target="_blank">非农数据</a>
+		<a class="navlink" href="http://kxt.com/data/4.html?xhy"  target="_blank">初请失业金</a>
+		<a class="navlink" href="http://kxt.com/data/1.html?xhy"  target="_blank">更多&gt;&gt;</a>
+		<div class="kefu_bt">
+			<li class="first"></li>
+			<li>
+			<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333569&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333569,'top')"><img src="images/qqjt.gif" alt="新华油-胡丽" title="请加QQ：873333569" class="qqimg"></a></li>
+			<li ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333539&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333539,'top')"><img src="images/qqjt.gif" alt="新华油-邱荣强" title="请加QQ：873333539" class="qqimg"></a></li>
+			<li ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333479&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333479,'top')"><img src="images/qqjt.gif" alt="新华油-丁联欢" title="请加QQ：873333479" class="qqimg"></a></li>
+			<li ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'top')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a></li>
+			<li ><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333659&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333659,'top')"><img src="images/qqjt.gif" alt="新华油-熊圣兵" title="请加QQ：873333659" class="qqimg"></a></li>
+		</div>
+	</div>
+	
+	
+		
+	<div class="right_wrap">
+		<div class="bt huanfu" onclick="huanfu_show();">换肤</div>
+		<div class="user">
+			<span class="mynickname" onclick="nicknamemenu_show(this);"><img src="images/level/0/11zsVIP.png" onclick="return false;" title="钻石vip"> 大鹏高飞</span>	
+		</div>
+		
+		
+		<!--<div class="bt reg" onclick="regform_show();">注册会员</div>
+		<div class="bt login" onclick="loginform_show();">登录</div>-->
+	</div>
+
+</div>
+
+<div class="main">
+	<div class="main_left">
+		<div class="topdiv">
+			<iframe src="http://panel.kuaixun360.com/hangqing5.php" height="116px" width="190px" scrolling="no" frameborder="0"></iframe>
+		</div>
+		<div class="vote tab">
+			<ul class="tab_bt">
+				<li class="active" rel="#vote_1" style="width:50%">原油</li>
+				<li rel="#vote_2" style="width:50%">白银</li>
+			</ul>
+			<div class="tab_con">
+				<div  id="vote_1">
+					<a class="t_up" href="javascript:void(0)" onclick="javascript:more_vote(0,3)">看涨<em>52%</em></a>
+					<a class="t_leve" href="javascript:void(0)" onclick="javascript:more_vote(1,3)">盘整<em>6%</em></a>
+					<a class="t_down" href="javascript:void(0)" onclick="javascript:more_vote(2,3)">看空<em>42%</em></a>
+				</div>
+				<div id="vote_2" style="display:none;background-position: 0px -40px;">
+					<a class="t_up" href="javascript:void(0)" onclick="javascript:more_vote(0,3)">看涨<em>22%</em></a>
+					<a class="t_leve" href="javascript:void(0)" onclick="javascript:more_vote(1,3)">盘整<em>26%</em></a>
+					<a class="t_down" href="javascript:void(0)" onclick="javascript:more_vote(2,3)">看空<em>52%</em></a>
+				</div>
+			</div>
+		</div>
+
+		
+		<div id="user_list">
+			<div class="user_ti clearfix tab">
+				<div class="tab_bt">
+				<a href="javascript:void(0)" class="u_ty manage_u" title="管理员" rel="#ul_manager"></a>
+				<a href="javascript:void(0)" class="u_ty member_u" title="在线会员" rel="#ul_member"></a>
+				</div>
+				<span id="user_cutover">在线会员</span> 
+				<a href="javascript:void(0)" onclick="loadUlistTimeout(0)" id="user_count">[刷新]</a>
+			</div>
+
+			<div class="clearfix"></div>
+			<!-- 用户列表 -->
+			<div id="list_u">
+				<div id="ul_member" >
+					<ul>
+						
+						<li class="member" id="u_28075" uid="28075" rid="217" name="福满都—花生" ip="">		<span><img class="roleimg" src="images/level/0/8th.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">福满都—花生</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="28075" rid="217" name="福满都—花生">对他说</a> <a href="javascript:void(0)" uid="28821" rid="217" name="满天红" ip="117.146.18.192" class="u_mor">操作</a></p>		</li>
+						<li class="member" id="u_8838" uid="8838" rid="218" name="五戒" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">五戒</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="8838" rid="218" name="五戒">对他说</a> <a href="javascript:void(0)" uid="28821" rid="217" name="满天红" ip="117.146.18.192" class="u_mor">操作</a></p>		</li>
+						<li class="member" id="u_19681" uid="19681" rid="218" name="赚钱买奶粉" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">赚钱买奶粉</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19681" rid="218" name="赚钱买奶粉">对他说</a></p>		</li>
+						<li class="member" id="u_19917" uid="19917" rid="218" name="央广购物、大帅" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">央广购物、大帅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19917" rid="218" name="央广购物、大帅">对他说</a></p>		</li>
+						<li class="member" id="u_23748" uid="23748" rid="218" name="有赚即好" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">有赚即好</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="23748" rid="218" name="有赚即好">对他说</a></p>		</li>
+						<li class="member" id="u_26799" uid="26799" rid="217" name="李雷and韩梅梅" ip="">		<span><img class="roleimg" src="images/level/0/8th.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">李雷and韩梅梅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="26799" rid="217" name="李雷and韩梅梅">对他说</a></p>		</li>
+						<li class="member" id="u_28075" uid="28075" rid="217" name="福满都—花生" ip="">		<span><img class="roleimg" src="images/level/0/8th.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">福满都—花生</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="28075" rid="217" name="福满都—花生">对他说</a></p>		</li>
+						<li class="member" id="u_8838" uid="8838" rid="218" name="五戒" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">五戒</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="8838" rid="218" name="五戒">对他说</a></p>		</li>
+						<li class="member" id="u_19681" uid="19681" rid="218" name="赚钱买奶粉" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">赚钱买奶粉</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19681" rid="218" name="赚钱买奶粉">对他说</a></p>		</li>
+						<li class="member" id="u_19917" uid="19917" rid="218" name="央广购物、大帅" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">央广购物、大帅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19917" rid="218" name="央广购物、大帅">对他说</a></p>		</li>
+						<li class="member" id="u_23748" uid="23748" rid="218" name="有赚即好" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">有赚即好</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="23748" rid="218" name="有赚即好">对他说</a></p>		</li>
+						<li class="member" id="u_26799" uid="26799" rid="217" name="李雷and韩梅梅" ip="">		<span><img class="roleimg" src="images/level/0/8th.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">李雷and韩梅梅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="26799" rid="217" name="李雷and韩梅梅">对他说</a></p>		</li>
+						<li class="member" id="u_28075" uid="28075" rid="217" name="福满都—花生" ip="">		<span><img class="roleimg" src="images/level/0/8th.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">福满都—花生</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="28075" rid="217" name="福满都—花生">对他说</a></p>		</li>
+						<li class="member" id="u_8838" uid="8838" rid="218" name="五戒" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">五戒</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="8838" rid="218" name="五戒">对他说</a></p>		</li>
+						<li class="member" id="u_19681" uid="19681" rid="218" name="赚钱买奶粉" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">赚钱买奶粉</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19681" rid="218" name="赚钱买奶粉">对他说</a></p>		</li>
+						<li class="member" id="u_19917" uid="19917" rid="218" name="央广购物、大帅" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">央广购物、大帅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19917" rid="218" name="央广购物、大帅">对他说</a></p>		</li>
+						<li class="member" id="u_23748" uid="23748" rid="218" name="有赚即好" ip="">		<span><img class="roleimg" src="images/level/0/9cz.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">有赚即好</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="23748" rid="218" name="有赚即好">对他说</a></p>		</li>
+						<li style="text-align:center" class="loadUmore"><a href="javascript:void(0)" onclick="loadUMore(0)">更多...</a></li>
+					</ul>
+				</div>
+
+				<div id="ul_manager">
+					<ul>
+						<li class="manager" id="u_26799" uid="26799" rid="217" name="李雷and韩梅梅" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">李雷and韩梅梅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="26799" rid="217" name="李雷and韩梅梅">对他说</a></p>		</li>
+						<li class="member" id="u_19917" uid="19917" rid="218" name="央广购物、大帅" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">央广购物、大帅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19917" rid="218" name="央广购物、大帅">对他说</a></p>		</li>
+						<li class="member" id="u_23748" uid="23748" rid="218" name="有赚即好" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">有赚即好</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="23748" rid="218" name="有赚即好">对他说</a></p>		</li>
+						<li class="member" id="u_26799" uid="26799" rid="217" name="李雷and韩梅梅" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">李雷and韩梅梅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="26799" rid="217" name="李雷and韩梅梅">对他说</a></p>		</li>
+						<li class="member" id="u_28075" uid="28075" rid="217" name="福满都—花生" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">福满都—花生</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="28075" rid="217" name="福满都—花生">对他说</a></p>		</li>
+						<li class="member" id="u_8838" uid="8838" rid="218" name="五戒" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">五戒</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="8838" rid="218" name="五戒">对他说</a></p>		</li>
+						<li class="member" id="u_19681" uid="19681" rid="218" name="赚钱买奶粉" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">赚钱买奶粉</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19681" rid="218" name="赚钱买奶粉">对他说</a></p>		</li>
+						<li class="member" id="u_19917" uid="19917" rid="218" name="央广购物、大帅" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">央广购物、大帅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19917" rid="218" name="央广购物、大帅">对他说</a></p>		</li>
+						<li class="member" id="u_23748" uid="23748" rid="218" name="有赚即好" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">有赚即好</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="23748" rid="218" name="有赚即好">对他说</a></p>		</li>
+						<li class="member" id="u_26799" uid="26799" rid="217" name="李雷and韩梅梅" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">李雷and韩梅梅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="26799" rid="217" name="李雷and韩梅梅">对他说</a></p>		</li>
+						<li class="member" id="u_28075" uid="28075" rid="217" name="福满都—花生" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="土豪"></span>		<a href="javascript:void(0)" class="f_left">福满都—花生</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="28075" rid="217" name="福满都—花生">对他说</a></p>		</li>
+						<li class="member" id="u_8838" uid="8838" rid="218" name="五戒" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">五戒</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="8838" rid="218" name="五戒">对他说</a></p>		</li>
+						<li class="member" id="u_19681" uid="19681" rid="218" name="赚钱买奶粉" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">赚钱买奶粉</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19681" rid="218" name="赚钱买奶粉">对他说</a></p>		</li>
+						<li class="member" id="u_19917" uid="19917" rid="218" name="央广购物、大帅" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">央广购物、大帅</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="19917" rid="218" name="央广购物、大帅">对他说</a></p>		</li>
+						<li class="member" id="u_23748" uid="23748" rid="218" name="有赚即好" ip="">		<span><img class="roleimg" src="images/level/0/3zj.png" title="财主"></span>		<a href="javascript:void(0)" class="f_left">有赚即好</a>		<p><a href="javascript:void(0)" class="talkto" onclick="sayTo(this)" uid="23748" rid="218" name="有赚即好">对他说</a></p>		</li>
+						<li style="text-align:center" class="loadUmore"><a href="javascript:void(0)" onclick="loadUMore(0)">更多...</a></li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+
+		<!--ulist结束-->
+
+		<div class="btmdiv">
+			<iframe src="http://spage.kxt.com/eia/xhy.html" scrolling="no" frameborder="0"></iframe>
+		</div>
+	</div>
+	<div class="main_mid">
+		<!-- 聊天模块开始 -->
+		
+		<div class="notice" >
+			<marquee direction="left"   id="notice" scrollamount="3">☆★☆新华油品牌强强联合，精英讲师，携手并进，新的精英团队，打造新华油全新高端服务品牌。点击上方【高级客服】，选择您最喜欢的老师↑↑</marquee>
+			<span class="ption_a r_btn" id="talk_filter">
+						<a href="javascript:void(0)" rel='public' class='cur'>全部</a>
+						<a href="javascript:void(0)" rel='member'>会员</a>
+			</span>
+			
+		</div>
+
+		<!-- 聊天开始 -->
+        <!--<div class="topiccontent_wrap">-->
+            <div class="topiccontent" >
+                <div id="topicbox">
+                    <div id="28898-1444910787" class="talk  public member">		<span><img class="roleimg" src="images/level/0/15hy.png" title="会员"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="224" uid="28898">happy</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>铜空单还能出来吗</p>		</div>		<div class="clear"></div>		</div>
+    
+                    <div id="29406-1444910803" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="29406">中国梦.</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师，初请失业金如何影响原油？？？？？？？？？？？？？？？？？</p>		</div>		<div class="clear"></div>		</div>
+    
+                    <div id="20151014-192715-999-1444910786" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151014-192715-999">游客-r999d</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/df/tootha_thumb.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="17475-1445225417" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="17475">雪花</a><a class="dui">对</a><img class="roleimg" src="images/level/0/17yk.png" title="游客"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-200240-918">游客-x918e</a><a class="time">[11:30]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师 牛！！！</p>		</div>		<div class="clear"></div>		</div>
+                    <div id="20151014-192715-999-1444910786" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151014-192715-999">游客-r999d</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/df/tootha_thumb.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="17475-1445225417" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="17475">雪花</a><a class="dui">对</a><img class="roleimg" src="images/level/0/17yk.png" title="游客"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-200240-918">游客-x918e</a><a class="time">[11:30]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师 牛！！！</p>		</div>		<div class="clear"></div>		</div>
+                    <div id="20151014-192715-999-1444910786" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151014-192715-999">游客-r999d</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/df/tootha_thumb.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="17475-1445225417" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="17475">雪花</a><a class="dui">对</a><img class="roleimg" src="images/level/0/17yk.png" title="游客"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-200240-918">游客-x918e</a><a class="time">[11:30]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师 牛！！！</p>		</div>		<div class="clear"></div>		</div>
+                    <div id="20151014-192715-999-1444910786" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151014-192715-999">游客-r999d</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/df/tootha_thumb.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="17475-1445225417" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="17475">雪花</a><a class="dui">对</a><img class="roleimg" src="images/level/0/17yk.png" title="游客"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-200240-918">游客-x918e</a><a class="time">[11:30]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师 牛！！！</p>		</div>		<div class="clear"></div>		</div>
+                    <div id="20151014-192715-999-1444910786" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151014-192715-999">游客-r999d</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/df/tootha_thumb.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="17475-1445225417" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="17475">雪花</a><a class="dui">对</a><img class="roleimg" src="images/level/0/17yk.png" title="游客"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-200240-918">游客-x918e</a><a class="time">[11:30]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师 牛！！！</p>		</div>		<div class="clear"></div>		</div>
+    
+                    <div id="20151015-160955-689-1445225391" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-160955-689">游客-t689q</a><a class="time">[11:29]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/pb/pb14.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="28881-1445225491" class="talk  public member">		<span><img class="roleimg" src="images/level/0/15hy.png" title="会员"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="224" uid="28881">柔水--馨馨</a><a class="time">[11:31]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>油和小白的走势一样就好了，我的空单就有希望出来了</p>		</div>		<div class="clear"></div>		</div>
+                    <div id="20151019-101419-613-1445225363" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151019-101419-613">游客-g613i</a><a class="time">[11:29]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/color_bar/pt/3.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="28898-1444910787" class="talk  public member">		<span><img class="roleimg" src="images/level/0/15hy.png" title="会员"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="224" uid="28898">happy</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>铜空单还能出来吗</p>		</div>		<div class="clear"></div>		</div>
+    
+                    <div id="29406-1444910803" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="29406">中国梦.</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师，初请失业金如何影响原油？？？？？？？？？？？？？？？？？</p>		</div>		<div class="clear"></div>		</div>
+    
+                    <div id="20151014-192715-999-1444910786" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151014-192715-999">游客-r999d</a><a class="time">[20:06]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/df/tootha_thumb.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="17475-1445225417" class="talk  public member">		<span><img class="roleimg" src="images/level/0/14byVIP.png" title="白银VIP"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="223" uid="17475">雪花</a><a class="dui">对</a><img class="roleimg" src="images/level/0/17yk.png" title="游客"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-200240-918">游客-x918e</a><a class="time">[11:30]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>老师 牛！！！</p>		</div>		<div class="clear"></div>		</div>
+    
+                    <div id="20151015-160955-689-1445225391" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151015-160955-689">游客-t689q</a><a class="time">[11:29]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/phiz/pb/pb14.gif"></p>		</div>		<div class="clear"></div>		</div>
+                    <div id="28881-1445225491" class="talk  public member">		<span><img class="roleimg" src="images/level/0/15hy.png" title="会员"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="224" uid="28881">柔水--馨馨</a><a class="time">[11:31]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p>油和小白的走势一样就好了，我的空单就有希望出来了</p>		</div>		<div class="clear"></div>		</div>
+                    <div id="20151019-101419-613-1445225363" class="talk  public">		<span><img class="roleimg" src="images/level/0/17yk.png" title="游客"></span>		<div class="talk_name"><a href="javascript:void(0)" class="u_mor" rid="1" uid="20151019-101419-613">游客-g613i</a><a class="time">[11:29]</a></div>		<div class="clear"></div>		<div class="talk_hua"><p><img src="images/color_bar/pt/3.gif"></p>		</div>		<div class="clear"></div>		</div>
+    				
+                </div>
+                
+            </div>
+            
+            <!--<div class="mar_wrap"></div>-->
+            
+        <!--</div>-->
+		<!-- 聊天结束 -->
+		<div id="warnmsg">
+		<p>☆新华油品牌全面升级：精英讲师，携手并进，打造业界高端服务品牌，点击下方【QQ交谈】，选择您最喜欢的老师↓↓</p>
+		</div>
+		<div id="daojikefu">
+		<p><span>高级客服：</span><a class="morekf" href="javascript:tc_default();">更多客服</a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a><a target="_blank" href="http://wpa.qq.com/msgrd?v=3&amp;uin=873333959&amp;site=qq&amp;menu=yes" onclick="qqbtclick(873333959,'bottom')"><img src="images/qqjt.gif" alt="新华油-蒋林" title="请加QQ：873333959" class="qqimg"></a></p>
+		</div>
+		<div id="topicinput">
+			<div class="tool_bar">
+				<span>
+					<a href="javascript:void(0)" id="bt_face" class="bar_2 bar" onclick="showFacePanel(this,'#sendMsgInput');"  isface="2">表情</a>
+					<a href="javascript:void(0)" class="bar_3 bar" id="bt_caitiao">彩条</a>
+					<a href="javascript:void(0)" onclick="javascript:new_upImage()" class="bar_1 bar" id="bt_myimage">图片</a>
+					<a href="javascript:void(0)" class="bar_4 bar" id="bt_qingping">清屏</a>
+					<a href="javascript:void(0)" class="bar_5 bar" id="bt_gundong" select="true">滚动</a>
+					<b><a href="javascript:tc_baodian();" class="bar_6 bar" id="bt_tzbd">投资学院</a></b>
+				</span>
+				 <select  class="s_right" id="send_talkto" onChange="talktoSelectChange()"><option value='0'>对所有人说</option>
+				</select>
+
+			</div>
+			<form id="imgUpload" name="imgUpload" action="/Upload.php/Upload" method="post" enctype="multipart/form-data" target="frameFile">
+			<input id="filedata" contenteditable="false" type="file" style="display:none;" onchange="$('#imgUpload').attr('action','/Upload.php/Upload?' + new Date().getTime() );document.imgUpload.submit();" name="filedata">
+			</form>
+			<iframe id='frameFile' name='frameFile' style='display: none;'></iframe>
+			<div class="input_area"><input type="text" id="sendMsgInput"/><a href="javascript:void(0)" onClick="sendMsg()" class="sub_btn">发送</a></div>
+		</div>
+
+		
+
+	</div>
+	<div class="main_right">
+		<div class="shiping_wrap">
+			<div class="sp_ti"><span><a href="javascript:switchVideo();">切换直播</a></span><a href="javascript:showLive(Live_id)" style="margin-right:20px;">刷新</a>
+
+			<div id='videolink'></div>
+			</div>
+
+			<div id="shiping">
+			<gs:video-live id="videoComponent" site="yingtong.gensee.com" ctx="training" ownerid="MBbaQf" authcode="000000" uname="aaa"/>
+			</div>
+		</div>
+		<div id="introduce" class="tab">
+			<div class="tab_bt">
+				<a  class="active"  rel='#info_mianze' style="color:#f00;font-weight:bold;font-size:16px">免责声明</a>
+				<a rel='#info_gonggao'>公告</a>	
+				<a href="javascript:void(0);" target="_iframe" url="http://www.hongxinpme.com/dazong/index.html" pwidth='1000' pheight="500">产品介绍</a>
+
+				<a href="javascript:void(0);" target="_iframe" url="http://www.xinhuayou88.com/News/Index/index/id/66.html" pwidth='1000' pheight="500">下载中心</a>
+				
+			</div>
+			<div class="tab_con">
+				<div id="info_mianze">
+					<pre style="white-space: pre-wrap;
+					word-wrap: break-word;color:#eee;font-family: Microsoft Yahei,Verdana, Geneva, sans-serif;">分析师发表的言论均代表其个人对于投资环境的市场观点。投资者应充分考虑投资有风险，入市需谨慎</pre>
+					<div class="clearfix"></div>
+				</div>
+				<div id="info_gonggao" class="hide">
+					<pre style="white-space: pre-wrap;
+					word-wrap: break-word;color:#eee;font-family: Microsoft Yahei,Verdana, Geneva, sans-serif;">
+<b style="font-size:16px">请认准正规平台</b>            
+投资有风险，入市需谨慎，选择正规平台，远离小平台：
+1、国内平台较多，具备优资质的并不多，请确认是否具备政府批文，选择合法平台。
+2、国内原油报价以国际价格为基础，综合中国人民银行人民币兑美元基准汇率，连续报出原油人民币买入价及卖出价。新华油只作为交流、学习的平台，若操作建议与您软件报价不一样，请谨慎参考。
+3、请您理性分析，切记带好止损止盈，不骄不躁，把控风险。
+					</pre>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--<div class="footer">
+
+<div class="f_left pl_15"><a href="http://" target="_blank">链接二</a> | <a href="http://" target="_blank">链接一</a></div>
+<div class="f_right pr_15">版权所有</div>
+
+</div>-->
+
+
+<div id="caitiao" class="hide ption_a" >
+	<dl id="c_pt" class="clearfix " isface="2" pack="3" style="display: block;">
+	<dd onclick="sendCaitiao('pt顶一个')">顶一个</dd>
+	<dd onclick="sendCaitiao('pt赞一个')">赞一个</dd>
+	<dd onclick="sendCaitiao('pt掌声')">掌声</dd>
+	<dd onclick="sendCaitiao('pt鲜花')">鲜花</dd>
+	</dl>
+
+	<div class="clearfix"></div>
+	<ul id="caitiaonav"><li rel="pt" class="f_cur" isnav="1" id="caitiao_nav_3">普通</li></ul>
+</div>
+
+<div id="face" class="ption_a tab hide" style="" toinput="#sendMsgInput">
+	<div>
+		<dl id="f_df" class="clearfix " isface="2" pack="1">
+			<dd isface="1" title="df给力"><img src="images/phiz/df/geili_thumb.gif" title="df给力" isface="1"></dd><dd isface="1" title="df围观"><img src="images/phiz/df/wg_thumb.gif" title="df围观" isface="1"></dd><dd isface="1" title="df威武"><img src="images/phiz/df/vw_thumb.gif" title="df威武" isface="1"></dd><dd isface="1" title="df呵呵"><img src="images/phiz/df/smilea_thumb.gif" title="df呵呵" isface="1"></dd><dd isface="1" title="df嘻嘻"><img src="images/phiz/df/tootha_thumb.gif" title="df嘻嘻" isface="1"></dd><dd isface="1" title="df哈哈"><img src="images/phiz/df/laugh.gif" title="df哈哈" isface="1"></dd>
+		</dl>
+
+		<dl id="f_pb" class="clearfix hide" isface="2" pack="6">
+			<dd isface="1" title="pb哟西"><img src="images/phiz/pb_min/pb0.gif" title="pb哟西" isface="1"></dd><dd isface="1" title="pb捏脸"><img src="images/phiz/pb_min/pb1.gif" title="pb捏脸" isface="1"></dd><dd isface="1" title="pb委屈"><img src="images/phiz/pb_min/pb2.gif" title="pb委屈" isface="1"></dd><dd isface="1" title="pb伤心"><img src="images/phiz/pb_min/pb3.gif" title="pb伤心" isface="1"></dd>
+		</dl>
+
+		<dl id="f_x" class="clearfix hide" isface="2" pack="7">
+			<dd isface="1" title="x飞行"><img src="images/phiz/x_min/00.gif" title="x飞行" isface="1"></dd><dd isface="1" title="x诅咒"><img src="images/phiz/x_min/01.gif" title="x诅咒" isface="1"></dd><dd isface="1" title="x吓"><img src="images/phiz/x_min/02.gif" title="x吓" isface="1"></dd><dd isface="1" title="x怒"><img src="images/phiz/x_min/03.gif" title="x怒" isface="1"></dd>
+		</dl>
+	</div>
+	<div class="clearfix"></div>
+		<ul id="facenav" isface="2" class="tab_bt">
+			<li rel="#f_df" class="active" phid="1" isface="2" id="phiz_nav_1">默认</li>
+			<li rel="#f_pb" phid="6" isface="2" id="phiz_nav_6">炮兵</li>
+			<li rel="#f_x" phid="7" isface="2" id="phiz_nav_7">暴力熊</li>
+		</ul>
+	</div>
+    
+    <!-- 右下角信息提醒 -->
+	<div class="right_bottom_message">
+		<span class="clos_btn"></span>
+        <div class="mes_wrap">
+        	<img src="images/mesag.png" class="">
+			<h3 class="mes_title">新华油-巡管</h3>
+        </div>
+		<p onclick="sendMesg(this)">给您发送<i class="orange_word">1</i>条消息</p>
+	</div>
+	<!--end-->	
+    
+   <!--私聊弹出框-->
+   <div id="Talkbox">
+   <div id="TalkToNames">
+    <dl> 
+    	<!--<dd title="诗意人生—小何" uid="31418" rid="224" class="cur" onclick="nameTabClick(this);"><i class="icon-close_small"></i><img class="roleimg" src="images/15hy.png" title="会员">诗意人生</dd>
+        <dd title="小何" uid="31238" rid="224" onclick="nameTabClick(this);"><i class="icon-close_small"></i><img class="roleimg" src="images/15hy.png" title="会员">小何</dd>-->
+    </dl>
+   </div>
+   <div id="TalkCon">
+    <div id="TalkName" style="cursor:default;">
+     <i class="icon-close"></i>
+     <p id="talktoname"></p>
+    </div>
+    <div id="talkpanels">
+    	<li class="m_talkhistory"></li>
+		<!--<div class="msgpanel" uid="31418" ><ul></ul></div>-->
+        <!--<div class="msgpanel" uid="31238" ><ul></ul></div>-->
+    </div>
+    <div id="Talkinput">
+     <a href="javascript:void(0);" class="faceShow">表情</a>
+     <input type="text" name="Talkinput" class="Talkinputarea" id="Talkinputarea" />
+     <input type="submit" class="Talksentbtn" value="发送" onclick="sendPrivateMsg();" />
+    </div> 
+   </div> 
+  </div>
+  <!--end-->
+ <!-- <div id="Talkbox" class="Talkbox" style="display:none;">
+
+<div id="TalkToNames">
+
+<dl>
+
+</dl>
+
+</div>
+
+<div id="TalkCon">
+
+<div id="TalkName" style="cursor:default;"><i class="icon-close"></i><p id="talktoname"></p></div>
+
+<div id="talkpanels">
+
+</div>
+
+<div id="Talkinput"><a href="javascript:void(0);" onclick="showFacePanel(this,'#Talkinputarea');" class="faceShow">表情</a>
+
+<input type="text" name="Talkinput" class="Talkinputarea" id="Talkinputarea"/><input type="submit" class="Talksentbtn" value="发送" onClick="sendPrivateMsg();"/></div>
+
+</div>
+
+</div>
+-->
+<!--私聊窗口end -->
+<!-- <marquee direction="left" class="feiping" scrollamount="3">这是一条飞屏---</marquee>-->
+
+</body>
+	
+</html>
